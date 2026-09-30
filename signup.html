@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Create your profile — ConnectED</title>
+  <meta name="description" content="Create a ConnectED student profile. Free, with no payment. This demo stays on your device.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect rx='8' width='32' height='32' fill='%23d61f13'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="nav">
+    <div class="container">
+      <a class="brand" href="index.html"><span class="brand-mark">Co</span>ConnectED</a>
+      <nav class="nav-links" aria-label="Site">
+        <a href="opportunities.html">Opportunities</a>
+        <a href="universities.html">Universities</a>
+        <a href="features.html">Features</a>
+        <a href="about.html">About</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+      <div class="nav-right">
+        <a class="btn btn-ghost" href="login.html">Log in</a>
+        <a class="btn btn-primary btn-sm" href="signup.html" aria-current="page">Get started</a>
+        <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="mobile-panel" aria-label="Menu"><span></span></button>
+      </div>
+    </div>
+  </header>
+  <div class="mobile-panel" id="mobile-panel">
+    <a href="opportunities.html">Opportunities</a>
+    <a href="universities.html">Universities</a>
+    <a href="features.html">Features</a>
+    <a href="about.html">About</a>
+    <a href="faq.html">FAQ</a>
+    <a href="support.html">Support</a>
+    <a href="login.html">Log in</a>
+  </div>
+
+  <main id="main">
+    <div class="auth">
+      <div>
+        <h1>Create your profile</h1>
+        <p class="lead" style="margin-top:8px">Free for students. No checkout and no plan.</p>
+      </div>
+      <form class="card form" id="signup-form" novalidate>
+        <p class="form-error" id="signup-error" hidden></p>
+        <div id="signup-fields">
+          <label>Full name
+            <input class="field" name="name" autocomplete="name" required>
+          </label>
+          <label>Phone
+            <input class="field" name="phone" type="tel" value="+974 " autocomplete="tel" required>
+          </label>
+          <label>Email
+            <input class="field" name="email" type="email" autocomplete="email" required>
+          </label>
+          <label>Password
+            <input class="field" name="password" type="password" autocomplete="new-password" required>
+          </label>
+          <div class="row">
+            <label>Gender
+              <select class="field" name="gender" required>
+                <option value="">Select</option>
+                <option>Female</option>
+                <option>Male</option>
+                <option>Prefer not to say</option>
+              </select>
+            </label>
+            <label>Date of birth
+              <input class="field" name="dob" type="date" required>
+            </label>
+          </div>
+          <label>Partnered school <span class="muted">(optional)</span>
+            <input class="field" name="school" placeholder="Leave blank if you are not at a partnered school">
+          </label>
+          <p class="small muted">A partnered school can add a verified badge after your counselor approves it. You need that approval before applying to opportunities.</p>
+          <label class="check-row">
+            <input type="checkbox" name="guardian" required>
+            <span>A parent or guardian knows about this registration and agrees to the <a href="terms.html" style="text-decoration:underline">terms of service</a>.</span>
+          </label>
+          <button class="btn btn-primary btn-block" type="submit">Create profile</button>
+        </div>
+        <div class="form-success" id="signup-done" hidden>
+          <strong>Profile details look complete.</strong>
+          <p>This demo stays in your browser. Nothing was sent, and no account was created on ConnectED.</p>
+          <a class="btn btn-secondary" href="opportunities.html">Browse opportunities</a>
+        </div>
+      </form>
+      <p class="small muted">Already have an account? <a href="login.html" style="text-decoration:underline">Log in</a>.</p>
+    </div>
+  </main>
+  <script src="js/site.js"></script>
+</body>
+</html>

@@ -49,8 +49,8 @@
 
   /* data: the two cards on the connected homepage */
   const previews = [
-    { id: "gti", kind: "scholarship", title: "global tech innovators", text: "the scholarship card on the connected homepage, matched to a computer science track.", track: "computer science", cover: "cover-a" },
-    { id: "expo", kind: "open day", title: "engineering expo", text: "the open-day card on the connected homepage dashboard.", track: "engineering", cover: "cover-b" },
+    { id: "gti", kind: "scholarship", title: "Global Tech Innovators", text: "The scholarship card on the ConnectED homepage, matched to a computer science track.", track: "Computer science", cover: "cover-a" },
+    { id: "expo", kind: "open day", title: "Engineering Expo", text: "The open-day card on the ConnectED homepage dashboard.", track: "Engineering", cover: "cover-b" },
   ];
   const saved = new Set();
 
@@ -71,13 +71,14 @@
 
     const row = (item) => {
       const on = saved.has(item.id);
-      return `<div class="row-item"><div><strong>${item.title}</strong><span>${item.kind} · ${item.track}</span></div><button type="button" class="chip-btn" data-save="${item.id}" aria-pressed="${on}">${on ? "saved" : "save"}</button></div>`;
+      const kind = item.kind.charAt(0).toUpperCase() + item.kind.slice(1);
+      return `<div class="row-item"><div><strong>${item.title}</strong><span>${kind} · ${item.track}</span></div><button type="button" class="chip-btn" data-save="${item.id}" aria-pressed="${on}">${on ? "Saved" : "Save"}</button></div>`;
     };
     const renderList = () => {
       if (!list) return;
       const q = (search?.value || "").trim().toLowerCase();
       const rows = previews.filter((i) => `${i.title} ${i.kind} ${i.track}`.includes(q));
-      list.innerHTML = rows.length ? rows.map(row).join("") : `<div class="empty"><strong>no opportunities found</strong><p>try adjusting your search or filters.</p></div>`;
+      list.innerHTML = rows.length ? rows.map(row).join("") : `<div class="empty"><strong>No opportunities found</strong><p>Try adjusting your search or filters.</p></div>`;
       list.querySelectorAll("[data-save]").forEach((b) => b.addEventListener("click", () => {
         const id = b.dataset.save;
         saved.has(id) ? saved.delete(id) : saved.add(id);
@@ -90,7 +91,7 @@
       const rows = previews.filter((i) => saved.has(i.id));
       savedList.innerHTML = rows.length
         ? rows.map((i) => `<div class="row-item"><div><strong>${i.title}</strong><span>${i.kind}</span></div></div>`).join("")
-        : `<div class="empty"><strong>nothing saved yet</strong><p>save a scholarship or open day from opportunities.</p></div>`;
+        : `<div class="empty"><strong>Nothing saved yet</strong><p>Save a scholarship or open day from Opportunities.</p></div>`;
     };
     search?.addEventListener("input", () => { show("opportunities"); renderList(); });
     renderList(); renderSaved();
@@ -108,10 +109,10 @@
 
   /* workflow steps */
   const stepData = [
-    ["create your profile", "add everything once. the same profile powers discovery, matching, and every application you submit.", ["academic details and preferences", "documents and certificates", "activities and interests", "profile completion, step by step"]],
-    ["find high-fit options", "browse world-class universities or go straight to fully funded opportunities tailored to you.", ["search and filter by location, major, and interest", "save and like what fits", "compare universities and active opportunities", "smart recommendations from your profile"]],
-    ["apply with context", "use profile completion checks and organized materials to submit stronger applications.", ["profile readiness before you submit", "reuse 100% of your details", "materials in one organized place", "school counselor approval when you add a partnered school"]],
-    ["track every outcome", "follow deadlines, application statuses, interviews, decisions, and offers in one dashboard.", ["kanban board: saved, applied, interview, offer", "automated deadline alerts", "interview dates", "decisions and offers"]],
+    ["Create your profile", "Add everything once. The same profile powers discovery, matching, and every application you submit.", ["Academic details and preferences", "Documents and certificates", "Activities and interests", "Profile completion, step by step"]],
+    ["Find high-fit options", "Browse universities or go straight to fully funded opportunities tailored to you.", ["Search and filter by location, major, and interest", "Save what fits", "Compare universities and active opportunities", "Recommendations from your profile"]],
+    ["Apply with context", "Use profile completion checks and organized materials to submit stronger applications.", ["Profile readiness before you submit", "Reuse your details on every application", "Materials in one place", "Counselor approval when you add a partnered school"]],
+    ["Track every outcome", "Follow deadlines, statuses, interviews, decisions, and offers in one dashboard.", ["Board: saved, applied, interview, offer", "Deadline alerts", "Interview dates", "Decisions and offers"]],
   ];
   const steps = [...document.querySelectorAll("[data-step]")];
   if (steps.length) {
@@ -122,7 +123,7 @@
     const set = (i) => {
       steps.forEach((s) => s.setAttribute("aria-pressed", String(Number(s.dataset.step) === i)));
       const [t, d, items] = stepData[i];
-      if (kicker) kicker.innerHTML = `<i></i>step ${i + 1}`;
+      if (kicker) kicker.textContent = `Step ${i + 1}`;
       if (title) title.textContent = t;
       if (text) text.textContent = d;
       if (ul) ul.innerHTML = items.map((x) => `<li>${x}</li>`).join("");
@@ -151,8 +152,11 @@
       const s = (q?.value || "").trim().toLowerCase();
       const rows = previews.filter((i) => (kind === "all" || i.kind === kind) && `${i.title} ${i.text} ${i.track}`.includes(s));
       out.innerHTML = rows.length
-        ? rows.map((i) => `<article class="opp"><div class="opp-cover ${i.cover}"></div><div class="opp-body"><span class="opp-kicker">${i.kind} · shown on connectedqa.com</span><h3>${i.title}</h3><p>${i.text}</p><span class="meta">${i.track}</span></div></article>`).join("")
-        : `<div class="card empty" style="grid-column:1/-1"><strong>no opportunities found</strong><p>try adjusting your search or filters.</p></div>`;
+        ? rows.map((i) => {
+            const kind = i.kind.charAt(0).toUpperCase() + i.kind.slice(1);
+            return `<article class="opp"><div class="opp-cover ${i.cover}"></div><div class="opp-body"><span class="opp-kicker">${kind} · shown on ConnectED</span><h3>${i.title}</h3><p>${i.text}</p><span class="meta">${i.track}</span></div></article>`;
+          }).join("")
+        : `<div class="card empty" style="grid-column:1/-1"><strong>No opportunities found</strong><p>Try adjusting your search or filters.</p></div>`;
     };
     chips.forEach((c) => c.addEventListener("click", () => { kind = c.dataset.kind; chips.forEach((x) => x.setAttribute("aria-pressed", String(x === c))); draw(); }));
     q?.addEventListener("input", draw);
@@ -167,8 +171,8 @@
     const draw = () => {
       const active = fields.some((f) => f.value && f.value !== "any");
       out.innerHTML = active
-        ? `<div class="empty"><strong>no universities found</strong><p>try adjusting your search or filters. the live network opens after you create an account.</p></div>`
-        : `<div class="empty"><strong>global university hub</strong><p>discover world-class institutions tailored to your ambitions, or explore the complete global network once you are in.</p></div>`;
+        ? `<div class="empty"><strong>No universities found</strong><p>Try adjusting your search or filters. The full network opens after you create an account.</p></div>`
+        : `<div class="empty"><strong>Global university hub</strong><p>Discover institutions tailored to your ambitions, or explore the complete network once you are in.</p></div>`;
     };
     fields.forEach((f) => f.addEventListener("input", draw));
     draw();
@@ -182,5 +186,65 @@
     const topic = d.get("topic");
     const body = [`name: ${d.get("first")} ${d.get("last")}`, `email: ${d.get("email")}`, `topic: ${topic}`, "", d.get("message")].join("\n");
     window.location.href = `mailto:connected.qaa@gmail.com?subject=${encodeURIComponent("ConnectED support: " + topic)}&body=${encodeURIComponent(body)}`;
+  });
+
+  const showError = (el, message) => {
+    if (!el) return;
+    el.hidden = !message;
+    el.textContent = message || "";
+  };
+
+  const loginForm = document.getElementById("login-form");
+  loginForm?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const email = loginForm.email.value.trim();
+    const password = loginForm.password.value;
+    const error = document.getElementById("login-error");
+    if (!email || !password) { showError(error, "Enter both your email and password."); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showError(error, "Enter a valid email address."); return; }
+    if (password.length < 8) { showError(error, "Password needs at least 8 characters."); return; }
+    showError(error, "");
+    document.getElementById("login-fields").hidden = true;
+    const done = document.getElementById("login-done");
+    document.getElementById("login-done-title").textContent = "Form looks fine.";
+    document.getElementById("login-done-text").textContent = "This demo does not sign you into the live ConnectED account. Your password was not sent anywhere.";
+    done.hidden = false;
+  });
+  document.getElementById("forgot")?.addEventListener("click", () => {
+    const error = document.getElementById("login-error");
+    const email = loginForm?.email.value.trim();
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      showError(error, "Enter the email on your account first. This demo will not send a reset email.");
+      return;
+    }
+    showError(error, "");
+    document.getElementById("login-fields").hidden = true;
+    document.getElementById("login-done-title").textContent = "Reset request noted on this page only.";
+    document.getElementById("login-done-text").textContent = `No email was sent to ${email}. To reach ConnectED, write to connected.qaa@gmail.com.`;
+    document.getElementById("login-done").hidden = false;
+  });
+
+  const signupForm = document.getElementById("signup-form");
+  signupForm?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const d = new FormData(signupForm);
+    const error = document.getElementById("signup-error");
+    const name = String(d.get("name") || "").trim();
+    const phone = String(d.get("phone") || "").replace(/\s/g, "");
+    const email = String(d.get("email") || "").trim();
+    const password = String(d.get("password") || "");
+    const gender = String(d.get("gender") || "");
+    const dob = String(d.get("dob") || "");
+    const guardian = signupForm.guardian.checked;
+    if (name.length < 2) { showError(error, "Enter your full name."); return; }
+    if (!/^\+974\d{8}$/.test(phone)) { showError(error, "Phone should start with +974 and include 8 digits."); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showError(error, "Enter a valid email address."); return; }
+    if (password.length < 8) { showError(error, "Password needs at least 8 characters."); return; }
+    if (!gender) { showError(error, "Select a gender."); return; }
+    if (!dob) { showError(error, "Add your date of birth."); return; }
+    if (!guardian) { showError(error, "Confirm that a parent or guardian agrees to the terms."); return; }
+    showError(error, "");
+    document.getElementById("signup-fields").hidden = true;
+    document.getElementById("signup-done").hidden = false;
   });
 })();

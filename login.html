@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Log in — ConnectED</title>
+  <meta name="description" content="Sign in to ConnectED. This demo checks the form locally and does not connect to the live account system.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect rx='8' width='32' height='32' fill='%23d61f13'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="nav">
+    <div class="container">
+      <a class="brand" href="index.html"><span class="brand-mark">Co</span>ConnectED</a>
+      <nav class="nav-links" aria-label="Site">
+        <a href="opportunities.html">Opportunities</a>
+        <a href="universities.html">Universities</a>
+        <a href="features.html">Features</a>
+        <a href="about.html">About</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+      <div class="nav-right">
+        <a class="btn btn-ghost" href="login.html" aria-current="page">Log in</a>
+        <a class="btn btn-primary btn-sm" href="signup.html">Get started</a>
+        <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="mobile-panel" aria-label="Menu"><span></span></button>
+      </div>
+    </div>
+  </header>
+  <div class="mobile-panel" id="mobile-panel">
+    <a href="opportunities.html">Opportunities</a>
+    <a href="universities.html">Universities</a>
+    <a href="features.html">Features</a>
+    <a href="about.html">About</a>
+    <a href="faq.html">FAQ</a>
+    <a href="support.html">Support</a>
+    <a href="signup.html">Get started</a>
+  </div>
+
+  <main id="main">
+    <div class="auth">
+      <div>
+        <h1>Log in</h1>
+        <p class="lead" style="margin-top:8px">Use the email and password for your student account.</p>
+      </div>
+      <form class="card form" id="login-form" novalidate>
+        <p class="form-error" id="login-error" hidden></p>
+        <div id="login-fields">
+          <label>Email
+            <input class="field" name="email" type="email" autocomplete="email" required>
+          </label>
+          <label>Password
+            <input class="field" name="password" type="password" autocomplete="current-password" required>
+          </label>
+          <button class="btn btn-primary btn-block" type="submit">Log in</button>
+          <button class="btn btn-ghost" type="button" id="forgot">Forgot password</button>
+        </div>
+        <div class="form-success" id="login-done" hidden>
+          <strong id="login-done-title">Checked.</strong>
+          <p id="login-done-text"></p>
+          <a class="btn btn-secondary" href="index.html">Back to home</a>
+        </div>
+      </form>
+      <p class="small muted">New here? <a href="signup.html" style="text-decoration:underline">Create an account</a>. This page checks the form on your device. It does not sign you into the live ConnectED system.</p>
+    </div>
+  </main>
+  <script src="js/site.js"></script>
+</body>
+</html>
