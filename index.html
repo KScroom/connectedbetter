@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>connected — your gateway to world-class education</title>
+  <meta name="description" content="ConnectED helps students discover fully funded scholarships, top-tier universities, and exclusive internships. One profile, one dashboard. Free, with no platform charges.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect rx='8' width='32' height='32' fill='%23d61f13'/%3E%3Ctext x='16' y='21' text-anchor='middle' font-size='12' font-weight='700' fill='white' font-family='sans-serif'%3Eco%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <a class="skip" href="#main">skip to content</a>
+  <div class="boot" id="boot" aria-hidden="true">
+    <div>
+      <div class="boot-num" id="boot-num">00</div>
+      <p>loading opportunities</p>
+      <div class="boot-bar"><span></span></div>
+    </div>
+  </div>
+
+  <header class="nav">
+    <div class="container">
+      <a class="brand" href="index.html"><span class="brand-mark">co</span>connected</a>
+      <nav class="nav-links" aria-label="Site">
+        <a href="opportunities.html">opportunities</a>
+        <a href="universities.html">universities</a>
+        <a href="features.html">features</a>
+        <a href="about.html">about</a>
+        <a href="faq.html">faq</a>
+      </nav>
+      <div class="nav-right">
+        <a class="btn btn-ghost" href="https://connectedqa.com/login">log in</a>
+        <a class="btn btn-primary btn-sm" href="https://connectedqa.com/signup">get started</a>
+        <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="mobile-panel" aria-label="Menu"><span></span></button>
+      </div>
+    </div>
+  </header>
+  <div class="mobile-panel" id="mobile-panel">
+    <a href="opportunities.html">opportunities</a>
+    <a href="universities.html">universities</a>
+    <a href="features.html">features</a>
+    <a href="about.html">about</a>
+    <a href="faq.html">faq</a>
+    <a href="support.html">support</a>
+    <a href="https://connectedqa.com/login">log in</a>
+    <a class="btn btn-primary" href="https://connectedqa.com/signup">get started</a>
+  </div>
+
+  <main id="main">
+    <!-- hero: white card on grey paper (cal.com), tight display type (linear) -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-card">
+          <div class="hero-copy">
+            <span class="eyebrow"><i></i>built for ambitious students</span>
+            <h1 class="display">your gateway to world-class education.</h1>
+            <p class="lead">discover fully funded scholarships, top-tier universities, and exclusive internships. build your profile once, and unlock opportunities tailored to your ambitions.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="https://connectedqa.com/signup">start exploring opportunities</a>
+              <a class="btn btn-secondary" href="opportunities.html">browse the catalogue</a>
+            </div>
+            <p class="hero-note">free for students. no platform charges, no payment.</p>
+          </div>
+
+          <div class="hero-visual">
+            <div class="app" id="app" aria-label="ConnectED dashboard preview">
+              <aside class="app-side">
+                <div class="app-brand"><span class="brand-mark">co</span>connected</div>
+                <div class="app-label">menu</div>
+                <button type="button" data-view="dashboard" aria-pressed="true">dashboard</button>
+                <button type="button" data-view="explorer" aria-pressed="false">university explorer</button>
+                <button type="button" data-view="opportunities" aria-pressed="false">opportunities</button>
+                <div class="app-label">my space</div>
+                <button type="button" data-view="saved" aria-pressed="false">saved <span class="count" data-saved-count>0</span></button>
+                <button type="button" data-view="profile" aria-pressed="false">profile</button>
+                <button type="button" data-view="applications" aria-pressed="false">applications</button>
+              </aside>
+              <div class="app-main">
+                <div class="app-top">
+                  <input class="field" id="app-search" type="search" placeholder="search for anything here..." aria-label="Search the preview">
+                  <a class="btn btn-primary btn-sm" href="https://connectedqa.com/signup">my applications</a>
+                </div>
+
+                <div class="app-panel" data-panel="dashboard">
+                  <div class="banner">
+                    <strong>welcome back, ahmed 👋</strong>
+                    <p>explore newly added scholarships tailored to your computer science track.</p>
+                    <a class="btn btn-primary btn-sm" href="opportunities.html">explore scholarships</a>
+                  </div>
+                  <h4>recommended opportunities</h4>
+                  <div class="rec-grid">
+                    <article class="rec"><div class="rec-cover cover-a"></div><div class="rec-body"><span>scholarship</span><strong>global tech innovators</strong></div></article>
+                    <article class="rec"><div class="rec-cover cover-b"></div><div class="rec-body"><span>open day</span><strong>engineering expo</strong></div></article>
+                  </div>
+                  <div class="rail">
+                    <div class="mini"><b>02</b><span>upcoming deadlines</span></div>
+                    <div class="mini"><b>12</b><span>saved opportunities</span></div>
+                  </div>
+                </div>
+
+                <div class="app-panel" data-panel="explorer" hidden>
+                  <h4>global university hub</h4>
+                  <p>discover institutions tailored to your ambitions, or explore the complete network. filter by location, major, and interest.</p>
+                  <div class="app-top">
+                    <input class="field" placeholder="location" aria-label="Location" disabled>
+                    <input class="field" value="computer science" aria-label="Major" disabled>
+                  </div>
+                  <div class="empty"><strong>the live network opens in your account</strong><p>this preview follows the computer science track from the homepage.</p></div>
+                  <a class="btn btn-secondary btn-sm" href="universities.html">open the university hub</a>
+                </div>
+
+                <div class="app-panel" data-panel="opportunities" hidden>
+                  <h4>active opportunities</h4>
+                  <div data-opp-list></div>
+                </div>
+
+                <div class="app-panel" data-panel="saved" hidden>
+                  <h4>saved</h4>
+                  <div data-saved-list></div>
+                </div>
+
+                <div class="app-panel" data-panel="profile" hidden>
+                  <div class="meter" data-meter>50%</div>
+                  <p>profile completion. academic, personal, and preference fields, step by step.</p>
+                  <div class="check-list">
+                    <button class="check" type="button" aria-pressed="true"><span class="dot">✓</span>academic details</button>
+                    <button class="check" type="button" aria-pressed="true"><span class="dot">✓</span>preferences</button>
+                    <button class="check" type="button" aria-pressed="false"><span class="dot">✓</span>documents and certificates</button>
+                    <button class="check" type="button" aria-pressed="false"><span class="dot">✓</span>activities and interests</button>
+                  </div>
+                </div>
+
+                <div class="app-panel" data-panel="applications" hidden>
+                  <h4>one central dashboard</h4>
+                  <p>track active applications, interviews, and offers.</p>
+                  <div class="kanban">
+                    <div><b>saved</b><span class="chip">global tech innovators</span></div>
+                    <div><b>applied</b></div>
+                    <div><b>interview</b></div>
+                    <div><b>offer</b></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="logo-row" aria-label="Backed by">
+          <span class="label">backed by</span>
+          <span class="logo">hamad al-hajri<small>founder of snoonu</small></span>
+          <span class="logo">qatar science &amp; technology park</span>
+          <span class="logo">qatar foundation</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- sticker band (heyclicky) -->
+    <section class="section tight">
+      <div class="container">
+        <div class="stickers" aria-hidden="true">
+          <div class="sticker"><div class="nametag red" style="--rot:-6deg"><div class="nametag-top">hello<br>my name is</div><div class="nametag-name">connected</div></div></div>
+          <div class="sticker"><div class="window" style="--rot:2deg"><div class="window-bar"><i></i><i></i><i></i></div><div class="window-body"><div class="bar on"></div><div class="bar"></div><div class="tile cover-a"></div></div></div><span class="cap">match.mov</span></div>
+          <div class="sticker"><div class="kaomoji">^ ω ^</div></div>
+          <div class="sticker"><div class="folder"></div></div>
+          <div class="sticker"><div class="window" style="--rot:-3deg"><div class="window-bar"><i></i><i></i><i></i></div><div class="window-body"><div class="tile cover-b"></div><div class="bar"></div><div class="bar on"></div></div></div><span class="cap">deadline.mov</span></div>
+          <div class="sticker"><div class="nametag blue" style="--rot:5deg"><div class="nametag-top">hello<br>my name is</div><div class="nametag-name">ahmed</div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- feature scenes -->
+    <section class="section" id="features">
+      <div class="container">
+        <article class="scene">
+          <div class="scene-copy">
+            <div class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="bubbles">
+              <div class="bubble me">connected, find me a fully funded scholarship</div>
+              <div class="bubble them">on it. three matches on your track.</div>
+            </div>
+            <h3>perfect matching for you.</h3>
+            <p>stop searching blindly. the algorithm finds the exact scholarships that match your academic profile and career goals.</p>
+          </div>
+          <div class="scene-visual">
+            <div class="frame">
+              <div class="frame-bar"><i></i><i></i><i></i><span class="title">explorer</span></div>
+              <div class="frame-body">
+                <div class="banner"><strong>3 matches</strong><p>computer science track · fully funded · still open</p></div>
+                <div class="rec-grid">
+                  <article class="rec"><div class="rec-cover cover-a"></div><div class="rec-body"><span>scholarship</span><strong>global tech innovators</strong></div></article>
+                  <article class="rec"><div class="rec-cover cover-c"></div><div class="rec-body"><span>scholarship</span><strong>research summer</strong></div></article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="scene flip">
+          <div class="scene-copy">
+            <div class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="bubbles">
+              <div class="bubble me">reuse my profile for this application</div>
+              <div class="bubble them">done. two fields still missing.</div>
+            </div>
+            <h3>build once, apply anywhere.</h3>
+            <p>create your academic profile once and reuse 100% of your details for every application you submit. profile readiness shows what is missing before you send.</p>
+          </div>
+          <div class="scene-visual">
+            <div class="frame">
+              <div class="frame-bar"><i></i><i></i><i></i><span class="title">profile</span></div>
+              <div class="frame-body">
+                <div class="meter">100%</div>
+                <p class="muted small">profile completion, step by step.</p>
+                <div class="check-list">
+                  <span class="check" aria-pressed="true"><span class="dot">✓</span>academic details</span>
+                  <span class="check" aria-pressed="true"><span class="dot">✓</span>documents and certificates</span>
+                  <span class="check" aria-pressed="true"><span class="dot">✓</span>activities and interests</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="scene">
+          <div class="scene-copy">
+            <div class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="bubbles">
+              <div class="bubble me">what’s due this week?</div>
+              <div class="bubble them">two deadlines. one interview.</div>
+            </div>
+            <h3>never miss a deadline.</h3>
+            <p>track active applications, interviews, and offers on one kanban board, with automated alerts for upcoming deadlines and interview dates.</p>
+          </div>
+          <div class="scene-visual">
+            <div class="frame">
+              <div class="frame-bar"><i></i><i></i><i></i><span class="title">applications</span></div>
+              <div class="frame-body">
+                <div class="kanban">
+                  <div><b>saved</b><span class="chip">research summer</span></div>
+                  <div><b>applied</b><span class="chip">global tech innovators</span></div>
+                  <div><b>interview</b><span class="chip">engineering expo</span></div>
+                  <div><b>offer</b></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- mission -->
+    <section class="section" id="mission">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow"><i></i>our mission</span>
+          <h2 class="title">bridging the gap between talent and global opportunity.</h2>
+          <p class="lead">ambition has no borders. connected was built to democratize access to world-class education, turning a complex, stressful application process into a guided journey toward your dream career.</p>
+        </div>
+        <div class="grid grid-4 mt">
+          <div class="card stat"><div class="num">4</div><span class="num-label">simple steps</span><p>start your student journey with a quick onboarding built around your preferences.</p></div>
+          <div class="card stat"><div class="num">100%</div><span class="num-label">completely free</span><p>create your profile and explore your dashboard without platform charges.</p></div>
+          <div class="card stat"><div class="num">24/7</div><span class="num-label">access</span><p>access your dashboard, update your profile, and track progress anytime.</p></div>
+          <div class="card stat"><div class="num">100%</div><span class="num-label">clear</span><p>complete academic, personal, and preference fields step by step.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- workflow -->
+    <section class="section" id="workflow">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow"><i></i>guided setup</span>
+          <h2 class="title">four steps from search to acceptance.</h2>
+        </div>
+        <div class="steps mt">
+          <div class="step-list" role="tablist" aria-label="Workflow steps">
+            <button class="step" type="button" role="tab" data-step="0" aria-pressed="true"><span class="n">1</span><span><strong>create your profile</strong><span>academic details, preferences, documents, certificates, activities, and interests.</span></span></button>
+            <button class="step" type="button" role="tab" data-step="1" aria-pressed="false"><span class="n">2</span><span><strong>find high-fit options</strong><span>search, filter, save, like, and compare universities and active opportunities.</span></span></button>
+            <button class="step" type="button" role="tab" data-step="2" aria-pressed="false"><span class="n">3</span><span><strong>apply with context</strong><span>profile completion checks and organized materials for stronger applications.</span></span></button>
+            <button class="step" type="button" role="tab" data-step="3" aria-pressed="false"><span class="n">4</span><span><strong>track every outcome</strong><span>deadlines, statuses, interviews, decisions, and offers in one dashboard.</span></span></button>
+          </div>
+          <div class="card step-detail" id="step-detail" role="tabpanel">
+            <span class="eyebrow" id="step-kicker"><i></i>step 1</span>
+            <h3 id="step-title" style="margin-top:14px">create your profile</h3>
+            <p id="step-text">add everything once. the same profile powers discovery, matching, and every application you submit.</p>
+            <ul id="step-list"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- everything -->
+    <section class="section" id="everything">
+      <div class="container">
+        <div class="section-head center">
+          <span class="eyebrow"><i></i>platform features</span>
+          <h2 class="title">everything you need to land your dream offer.</h2>
+          <p class="lead">say goodbye to scattered spreadsheets. manage your entire academic journey from one intelligent dashboard.</p>
+        </div>
+        <div class="grid grid-3 mt">
+          <div class="card"><div class="icon">✦</div><h3>perfect matching</h3><p>scholarships that match your academic profile and career goals.</p></div>
+          <div class="card"><div class="icon">▦</div><h3>one central dashboard</h3><p>applications, interviews, and offers on a kanban board.</p></div>
+          <div class="card"><div class="icon">↻</div><h3>build once, apply anywhere</h3><p>reuse 100% of your details for every application.</p></div>
+          <div class="card"><div class="icon">◔</div><h3>never miss a deadline</h3><p>automated alerts for deadlines and interview dates.</p></div>
+          <div class="card"><div class="icon">♡</div><h3>saved opportunities</h3><p>bookmark scholarships and universities so your shortlist stays focused.</p></div>
+          <div class="card"><div class="icon">◎</div><h3>profile readiness</h3><p>see what is missing before you submit an application.</p></div>
+        </div>
+        <div class="section-head center mt-s" style="margin-top:28px"><a class="btn btn-secondary" href="features.html">see the full system</a></div>
+      </div>
+    </section>
+
+    <!-- notes wall -->
+    <section class="section" id="account">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow"><i></i>your student account</span>
+          <h2 class="title">what you get when you sign up.</h2>
+        </div>
+        <div class="notes mt">
+          <article class="note"><div class="note-top"><span class="avatar" style="background:#111">01</span><div><strong>one account</strong><span>full name, phone, email, password</span></div></div><p>plus gender and date of birth. the phone field starts at +974.</p><em>required at signup</em></article>
+          <article class="note"><div class="note-top"><span class="avatar" style="background:#d61f13">✓</span><div><strong>school badge</strong><span>optional</span></div></div><p>select your partnered school for a verified badge. your school counselor approves it before you can apply to opportunities.</p><em>optional</em></article>
+          <article class="note"><div class="note-top"><span class="avatar" style="background:#2f86ff">⌂</span><div><strong>parent or guardian</strong><span>confirmation</span></div></div><p>you confirm a parent or guardian is aware of your registration and agrees to the terms of service.</p><em>at signup</em></article>
+          <article class="note"><div class="note-top"><span class="avatar" style="background:#1f9d55">$0</span><div><strong>free to start</strong><span>no platform charges</span></div></div><p>there is no checkout, no plan, and no payment step anywhere in the product.</p><em>always</em></article>
+          <article class="note"><div class="note-top"><span class="avatar" style="background:#5b3cc4">◎</span><div><strong>mentors</strong><span>inside the account</span></div></div><p>explore educational opportunities, connect with mentors, and track your academic journey.</p><em>student account</em></article>
+          <article class="note"><div class="note-top"><span class="avatar" style="background:#c47b2b">24</span><div><strong>always available</strong><span>24/7</span></div></div><p>your dashboard, profile, and progress are there whenever you sit down to work.</p><em>anytime</em></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- faq -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="grid grid-2" style="gap:40px; align-items:start">
+          <div class="section-head">
+            <span class="eyebrow"><i></i>faq</span>
+            <h2 class="title">got questions? we’ve got answers.</h2>
+            <p class="lead">still have questions? we’re here to help.</p>
+            <a class="btn btn-secondary" href="support.html">contact support</a>
+          </div>
+          <div class="faq">
+            <div class="faq-item open"><button type="button" aria-expanded="true">what is connected?</button><p class="faq-a">a platform for ambitious students. discover fully funded scholarships, top-tier universities, open days, and exclusive internships. build one profile and track every application from one dashboard.</p></div>
+            <div class="faq-item"><button type="button" aria-expanded="false">is there a payment?</button><p class="faq-a">no. there is no checkout and no paid plan. you create a profile and explore the dashboard without platform charges.</p></div>
+            <div class="faq-item"><button type="button" aria-expanded="false">how does matching work?</button><p class="faq-a">you complete academic details, preferences, activities, and interests. connected uses that profile to surface scholarships and programs that fit your goals.</p></div>
+            <div class="faq-item"><button type="button" aria-expanded="false">who is it backed by?</button><p class="faq-a">hamad al-hajri, founder of snoonu, qatar science and technology park, and qatar foundation.</p></div>
+            <div class="faq-item"><button type="button" aria-expanded="false">how do i get help?</button><p class="faq-a">email connected.qaa@gmail.com. support typically replies within one business day.</p></div>
+            <a class="btn btn-ghost" href="faq.html" style="justify-self:start">all questions →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- cta -->
+    <section class="section" id="cta">
+      <div class="container">
+        <div class="cta">
+          <div>
+            <h2 class="title">the future should feel discoverable, organized, and within reach.</h2>
+            <p>built for students moving forward. create your profile once and move toward every opportunity faster.</p>
+          </div>
+          <div class="cta-actions">
+            <a class="btn btn-primary" href="https://connectedqa.com/signup">create your profile</a>
+            <a class="btn btn-secondary" href="features.html">see the platform</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html"><span class="brand-mark">co</span>connected</a>
+          <p class="tag">empowering ambitious students to access world-class education without borders.</p>
+        </div>
+        <div><h4>explore</h4><a href="opportunities.html">opportunities</a><a href="universities.html">universities</a><a href="https://connectedqa.com/login">log in</a><a href="https://connectedqa.com/signup">sign up</a></div>
+        <div><h4>company</h4><a href="features.html">features</a><a href="faq.html">faq</a><a href="support.html">contact support</a><a href="about.html">about us</a></div>
+        <div><h4>legal &amp; social</h4><a href="https://connectedqa.com/privacy-policy">privacy policy</a><a href="https://connectedqa.com/terms-of-service">terms of service</a><a href="https://www.instagram.com/connectedqa/">instagram</a><a href="https://www.linkedin.com/company/connectedqa">linkedin</a></div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 connected. all rights reserved.</span><span>doha, qatar · connected.qaa@gmail.com</span></div>
+    </div>
+  </footer>
+  <script src="js/site.js"></script>
+</body>
+</html>

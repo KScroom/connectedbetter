@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>features — connected</title>
+  <meta name="description" content="Matching, one dashboard, a reusable profile, and deadline alerts. ConnectED is free to start.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect rx='8' width='32' height='32' fill='%23d61f13'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <a class="skip" href="#main">skip to content</a>
+  <header class="nav">
+    <div class="container">
+      <a class="brand" href="index.html"><span class="brand-mark">co</span>connected</a>
+      <nav class="nav-links" aria-label="Site">
+        <a href="opportunities.html">opportunities</a>
+        <a href="universities.html">universities</a>
+        <a href="features.html" aria-current="page">features</a>
+        <a href="about.html">about</a>
+        <a href="faq.html">faq</a>
+      </nav>
+      <div class="nav-right">
+        <a class="btn btn-ghost" href="https://connectedqa.com/login">log in</a>
+        <a class="btn btn-primary btn-sm" href="https://connectedqa.com/signup">get started</a>
+        <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="mobile-panel" aria-label="Menu"><span></span></button>
+      </div>
+    </div>
+  </header>
+  <div class="mobile-panel" id="mobile-panel">
+    <a href="opportunities.html">opportunities</a><a href="universities.html">universities</a><a href="features.html">features</a><a href="about.html">about</a><a href="faq.html">faq</a><a href="support.html">support</a><a href="https://connectedqa.com/login">log in</a>
+    <a class="btn btn-primary" href="https://connectedqa.com/signup">get started</a>
+  </div>
+
+  <main id="main">
+    <section class="container">
+      <div class="page-hero">
+        <span class="eyebrow"><i></i>platform features</span>
+        <h1 class="display">everything you need to land your dream offer.</h1>
+        <p class="lead">connected brings discovery, matching, profile building, applications, deadlines, and outcomes into one intelligent academic workspace.</p>
+        <div class="cta-actions"><a class="btn btn-primary" href="https://connectedqa.com/signup">start exploring</a><a class="btn btn-secondary" href="opportunities.html">browse opportunities</a></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow"><i></i>core tools</span>
+          <h2 class="title">built for every step from search to acceptance.</h2>
+          <p class="lead">the landing page shows the highlights. this is the full system: personal matching, organized applications, reusable student data, and timely guidance.</p>
+        </div>
+        <div class="grid grid-2 mt">
+          <div class="card"><div class="icon">✦</div><h3>perfect matching for you.</h3><p>stop searching blindly. our algorithm finds the exact scholarships that match your academic profile and career goals.</p></div>
+          <div class="card"><div class="icon">▦</div><h3>one central dashboard.</h3><p>track active applications, interviews, and offers in a beautiful kanban board.</p></div>
+          <div class="card"><div class="icon">↻</div><h3>build once, apply anywhere.</h3><p>create your academic profile once and reuse 100% of your details for every application you submit.</p></div>
+          <div class="card"><div class="icon">◔</div><h3>never miss a deadline.</h3><p>get automated alerts for upcoming application deadlines and interview dates.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="workflow">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow"><i></i>workflow</span>
+          <h2 class="title">a calmer way to manage ambitious applications.</h2>
+        </div>
+        <div class="steps mt">
+          <div class="step-list" role="tablist" aria-label="Workflow steps">
+            <button class="step" type="button" role="tab" data-step="0" aria-pressed="true"><span class="n">1</span><span><strong>create your profile</strong><span>add academic details, preferences, documents, certificates, activities, and interests once.</span></span></button>
+            <button class="step" type="button" role="tab" data-step="1" aria-pressed="false"><span class="n">2</span><span><strong>find high-fit options</strong><span>search, filter, save, like, and compare universities and active opportunities.</span></span></button>
+            <button class="step" type="button" role="tab" data-step="2" aria-pressed="false"><span class="n">3</span><span><strong>apply with context</strong><span>use profile completion checks and organized materials to submit stronger applications.</span></span></button>
+            <button class="step" type="button" role="tab" data-step="3" aria-pressed="false"><span class="n">4</span><span><strong>track every outcome</strong><span>follow deadlines, statuses, interviews, decisions, and offers in one dashboard.</span></span></button>
+          </div>
+          <div class="card step-detail" role="tabpanel">
+            <span class="eyebrow" id="step-kicker"><i></i>step 1</span>
+            <h3 id="step-title" style="margin-top:14px">create your profile</h3>
+            <p id="step-text"></p>
+            <ul id="step-list"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow"><i></i>details that matter</span>
+          <h2 class="title">small workflow upgrades that remove big friction.</h2>
+        </div>
+        <div class="grid grid-3 mt">
+          <div class="card"><div class="icon">♡</div><h3>saved opportunities</h3><p>bookmark scholarships and universities so your shortlist stays focused.</p></div>
+          <div class="card"><div class="icon">◎</div><h3>profile readiness</h3><p>see what is missing before you submit an application.</p></div>
+          <div class="card"><div class="icon">✧</div><h3>smart recommendations</h3><p>receive recommendations shaped by profile data and real preferences.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta">
+          <div><h2 class="title">build your profile once. move toward every opportunity faster.</h2><p>ready when your profile is. free, with no platform charges.</p></div>
+          <div class="cta-actions"><a class="btn btn-primary" href="https://connectedqa.com/signup">create your profile</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div><a class="brand" href="index.html"><span class="brand-mark">co</span>connected</a><p class="tag">empowering ambitious students to access world-class education without borders.</p></div>
+        <div><h4>explore</h4><a href="opportunities.html">opportunities</a><a href="universities.html">universities</a><a href="https://connectedqa.com/login">log in</a><a href="https://connectedqa.com/signup">sign up</a></div>
+        <div><h4>company</h4><a href="features.html">features</a><a href="faq.html">faq</a><a href="support.html">contact support</a><a href="about.html">about us</a></div>
+        <div><h4>legal &amp; social</h4><a href="https://connectedqa.com/privacy-policy">privacy policy</a><a href="https://connectedqa.com/terms-of-service">terms of service</a><a href="https://www.instagram.com/connectedqa/">instagram</a><a href="https://www.linkedin.com/company/connectedqa">linkedin</a></div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 connected. all rights reserved.</span><span>doha, qatar · connected.qaa@gmail.com</span></div>
+    </div>
+  </footer>
+  <script src="js/site.js"></script>
+</body>
+</html>
